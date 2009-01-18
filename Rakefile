@@ -7,10 +7,10 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
     s.name = "seed_data"
-    s.summary = "TODO"
+    s.summary = "Adds methods to ActiveRecord to manage seed data that should be loaded into the database."
     s.email = "shahid@shah.org"
     s.homepage = "http://github.com/shah/seed_data"
-    s.description = "TODO"
+    s.description = "Create seed data rake tasks and use the new Model.create_or_update_seed() method to manage default data."
     s.authors = ["Shahid N. Shah"]
   end
 rescue LoadError

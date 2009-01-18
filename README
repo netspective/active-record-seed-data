@@ -1,7 +1,33 @@
 seed_data
 =========
 
-Description goes here.
+Given a hash of attributes, look up the record by an attribute in options[:SEED].
+
+If the record with given seed keys does not exist, it is created with the rest of the options.
+If the record already exists, it is updated with the given options.
+
+Raises an exception if the record is invalid to ensure seed data is loaded correctly.
+
+Any attribute may have "EVAL:" preceded by it and if it does, it will be evaluated at runtime
+before assigning it to the ActiveRecord attribute and saving it to the database.
+
+Returns the record.
+
+EXAMPLE:
+
+ModelName.create_or_update_seed(
+    :SEED => { :key => "attr_1" }
+    :attr_1 => val_1,
+    :attr_2 => val_2
+)
+
+log = []
+
+ModelName.create_or_update_seed(
+    :SEED => { :keys => ["attr_1", "attr_2"], :log => log }
+    :attr_1 => val_1,
+    :attr_2 => "EVAL:some ruby code",
+)
 
 COPYRIGHT
 =========
