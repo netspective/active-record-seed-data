@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.date = %q{2009-01-18}
   s.description = %q{Create seed data rake tasks and use the new Model.create_or_update_seed() method to manage default data.}
   s.email = %q{shahid@shah.org}
-  s.files = ["VERSION.yml", "lib/seed_data.rb", "test/seed_data_test.rb", "test/test_helper.rb"]
+  s.files = ["VERSION.yml", "lib/seed_data.rb", "test/seed_data_test.rb", "test/test_helper.rb", "test/database.yml", "test/schema.rb", "test/debug.log", "test/seed_data.sqlite3.db"]
   s.homepage = %q{http://github.com/shah/seed_data}
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.1}
