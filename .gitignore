@@ -2,3 +2,5 @@
 .DS_Store
 coverage
 pkg
+test/debug.log
+test/seed_data.sqlite3.db
