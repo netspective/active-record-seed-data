@@ -1,0 +1,7 @@
+sqlite:
+  :adapter: sqlite
+  :dbfile: seed_data.sqlite.db
+sqlite3:
+  :adapter: sqlite3
+  :dbfile: seed_data.sqlite3.db
+
