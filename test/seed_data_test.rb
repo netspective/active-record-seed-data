@@ -9,11 +9,17 @@ end
 class SeedDataTest < Test::Unit::TestCase
     context "ActiveRecord" do
       should "respond to create_or_update_seed" do
-        assert FirstSeedDataTestTable.respond_to?('create_or_update_seed')
+        assert_respond_to FirstSeedDataTestTable, :create_or_update_seed
       end
     end
 
     context "FirstSeedDataTestTable" do
+      should "throw an exception because the proper seed column was not provided" do
+        assert_raise SeedData::SeedColumnMissing do        
+          FirstSeedDataTestTable.create_or_update_seed(:SEED => { :key => "bad_name" }, :seed_name => "ROW_1", :attr_1 => "ATTR_1 Test Value 01")
+        end
+      end
+
       should "create the first seed row" do
         log = []
         record = FirstSeedDataTestTable.create_or_update_seed(:SEED => { :key => "seed_name", :log => log }, :seed_name => "ROW_1", :attr_1 => "ATTR_1 Test Value 01")
